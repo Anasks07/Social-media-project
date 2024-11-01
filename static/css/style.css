@@ -1,0 +1,806 @@
+
+
+body{
+    background-color: rgb(255, 255, 255);
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.header-section{
+    background-color: rgb(240, 231, 231);
+    height:100px;
+    width: 100%;
+    position: relative;
+    top:0px;
+    
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjusts space between items */
+    max-width: 1200px; /* Optional: set max width for centered content */
+    margin: 0 auto; /* Center the header content */
+    padding: 0 20px;
+    background-color: transparent;
+    height:70px;
+    padding-top: 10px;
+    
+}
+
+#h-text {
+    font-size: 24px;
+    margin-right: 10px;
+    font-family: monospace;
+    margin-top: 10px;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    height:40px;
+}
+
+#search-btn {
+    padding: 5px;
+    font-size: 16px;
+    margin-top:1px;
+    margin-right: 10px;
+    height:40px;
+    width:350px;
+    border-radius:25px;
+    border: none;
+
+}
+
+button[type="submit"] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top:16px;
+    height:40px;
+    border-radius: 19px;
+}
+.user-profile{
+    font-size: 24px;
+    margin-right: 10px;
+    font-family: monospace;
+    margin-top: 10px;
+
+}
+#profile{
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    object-fit: cover;
+}
+.main-section{
+    width: 100%;
+    margin-top:10px;
+    background-color: rgb(255, 255, 255);
+    
+}
+#post-user-pic{
+    border-radius: 50%;
+    height:60px;
+    width:60px;
+    object-fit: cover;
+
+}
+#alt-img-profile{
+    border-radius: 50%;
+    height:60px;
+    width:60px;
+    object-fit: cover;
+}
+
+#alt-img{
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    object-fit: cover;
+}
+#anchor-tag{
+    text-decoration: none;
+    color: inherit;
+    
+}
+.user-info{
+    display: flex;
+    gap: 10px;
+}
+.main-container{
+    background-color: rgb(255, 255, 255);
+    margin-left:250px;
+    margin-right: 250px;
+    box-sizing: border-box;
+
+}
+.main-content{
+    padding-left:40px;
+    padding-top:30px;
+    font-size: larger;
+    font-family: 'Segoe UI', Arial;
+    box-sizing: border-box;
+}
+.profilepage-section{
+    background-color: rgb(250, 250, 250);
+    padding:40px;
+
+}
+
+.profile-container{
+    margin-left:200px;
+    border-radius: 5px;
+    padding:30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+#user-profile-image{
+    border-radius: 50%;
+    height:150px;
+    width:150px;
+    object-fit: cover;
+}
+.profile-post{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#username-text{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+}
+.comment-user-info{
+    display: flex;
+    gap: 10px;
+}
+.button{
+    
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none; /* This removes the border */
+    cursor: pointer;
+}
+.follow-tag{
+    display: flex;
+    gap:20px;
+}
+.add-post-section{
+   border-radius: 20px;
+    border-style:groove;
+    border-color: black;
+    padding: 50px;
+    position: absolute;
+    top:100px;
+    left:450px;
+}
+.add-post-container{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#content{
+    border-color: black ;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    resize: none;
+
+}
+#sub-btn{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    height: 50px;
+    width:120px;
+    color:white;
+    border:3px solid rgb(1, 4, 18);
+    background-color:rgb(17, 21, 40);
+    margin-left:70px;
+    
+}
+.add-comment-section{
+    border-radius: 20px;
+     border-style:groove;
+     border-color: black;
+     padding: 50px;
+     position: absolute;
+     top:100px;
+     left:450px;
+ }
+ .add-comment-container{
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ #content{
+     border-color: black ;
+     color:black;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     resize: none;
+ 
+ }
+ #sub-btn{
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     font-size: medium;
+     height: 50px;
+     width:120px;
+     color:white;
+     border:3px solid rgb(1, 4, 18);
+     background-color:rgb(17, 21, 40);
+     margin-left:70px;
+     
+}
+.user-follower-section{
+    margin-left: 30px;
+    margin-top:20px;
+    display: flex;
+
+}
+.user-follower-container{
+    background-color: transparent;
+    position: absolute;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+#follow-user-pic{
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    object-fit: cover;
+    margin-top:8px;
+}
+.user-following-section{
+    margin-left: 30px;
+    margin-top:20px;
+    display: flex;
+
+}
+.user-following-container{
+    background-color: transparent;
+    position: absolute;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+#following-user-pic{
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    object-fit: cover;
+    margin-top:8px;
+}
+
+.post-detail-section{
+    margin-left: 30px;
+    margin-top: 60px;
+    margin-right: 20px;
+}
+.post-detail-container{
+    padding: 10px;
+}
+#username{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#created-date{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#post-content{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:larger;
+}
+.comment-section{
+    margin-right: 10px;
+    display: flex;
+    gap:15px;
+}
+#comment-user-pic{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#comment-content{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    margin-left:20px;
+    
+}
+.update-profile-section{
+    margin-left: 40px;
+}
+.search-content-container{
+    background-color: transparent;
+    width:40%;
+    margin-left: 40px;
+    margin-top: 40px;
+    position: absolute;
+   
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#follow-btn{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+.form-section{
+    border-radius: 10px;
+    position:absolute;
+    left:540px;
+    top:200px;
+    box-shadow:3px 5px 3px #9a1414;
+
+    
+}
+.form-container{
+    background-color: rgb(62, 12, 12);
+    height:200px;
+    width:400px;
+    border-radius: 10px;
+}
+.form{
+    margin-left:10px;
+}
+
+#login-username{
+    height:40px;
+    margin-top:19px;
+    width:370px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    padding-left: 10px;
+
+}
+#login-password{
+    height:40px;
+    width:370px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    padding-left:10px;
+}
+#login-btn{
+    background-color: rgb(182, 0, 0);
+    height:30px;
+    width:90px;
+    position:absolute;
+    left:145px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    color:bisque;
+}
+input[type="text"] {
+    background-color: white;
+    border: 1px solid #fffcfc;
+    
+}
+
+input[type="text"]:focus {
+    border-color: rgb(242, 231, 238);
+    outline: none;
+}
+
+input[type="email"] {
+    background-color: white;
+    border: 1px solid #fffcfc;
+    
+}
+
+input[type="email"]:focus {
+    border-color: rgb(242, 231, 238);
+    outline: none;
+}
+
+input[type="password"] {
+    background-color: white;
+    border: 1px solid #fffcfc;
+    
+}
+
+input[type="password"]:focus {
+    border-color: rgb(232, 221, 228);
+    outline: none;
+}
+.register-form-section{
+    border-radius: 10px;
+    position:absolute;
+    left:540px;
+    top:200px;
+    box-shadow:3px 5px 3px #9a1414;
+}
+.register-form-container{
+    background-color: rgb(47, 31, 31);
+    height:310px;
+    width:400px;
+    border-radius: 10px;
+}
+.form{
+    margin-left:10px;
+}
+
+#register-username{
+    height:40px;
+    margin-top:15px;
+    width:370px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    padding-left: 10px;
+
+}
+#register-email{
+    height:40px;
+    margin-top:8px;
+    width:370px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    padding-left: 10px;
+
+}
+#register-password{
+    height:40px;
+    width:370px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    padding-left:10px;
+}
+#register-btn{
+    background-color: rgb(182, 0, 0);
+    height:30px;
+    width:90px;
+    position:absolute;
+    bottom:30px;
+    left:145px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    color:bisque;
+}
+
+.login-link{
+    height: 5px;
+    margin-top:-19px;
+    color:bisque;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+} 
+#lo-link{
+    color:rgb(106, 160, 206);
+}
+@media screen and (min-width: 480px) and (max-width: 700px) {
+    body {
+      background-color: rgb(255, 255, 255);
+      max-width: fit-content;
+    }
+    .main-container{
+        background-color: rgb(255, 255, 255);
+        margin-left:0px;
+        margin-right: 0px;
+        box-sizing: border-box;
+    
+    }
+    .main-content{
+        padding-left:20px;
+        padding-top:30px;
+        font-size: larger;
+        font-family: 'Segoe UI', Arial;
+        box-sizing: border-box;
+    }
+    
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Adjusts space between items */
+        width: 400px; /* Optional: set max width for centered content */
+        margin: 0 auto; /* Center the header content */
+        padding: 0 30px;
+        background-color: transparent;
+        height:70px;
+        padding-top: 10px;
+    
+    }
+    #h-text {
+        font-size: 19px;
+        margin-right: 20px;
+        font-family: monospace;
+        margin-top: 10px;
+    }
+     
+    .search-section {
+        display: flex;
+        align-items: center;
+        height:40px;
+    } 
+       
+     #search-btn {
+        padding: 5px;
+        font-size: 16px;
+        margin-top:1px;
+        margin-right: 1px;
+        height:40px;
+        width:250px;
+        border-radius:25px;
+        border: none;
+
+    }
+    .user-profile{
+        font-size: 24px;
+        margin-right: 10px;
+        font-family: monospace;
+        margin-top: 10px;
+    
+    }
+    #profile{
+        border-radius: 50%;
+        height:45px;
+        width:45px;
+        object-fit: cover;
+    }
+    #post-user-pic{
+        border-radius: 50%;
+        height:50px;
+        width:50px;
+        object-fit: cover;
+    
+    }
+    #alt-img-profile{
+        border-radius: 50%;
+        height:50px;
+        width:50px;
+        object-fit: cover;
+    }
+    #alt-img{
+        border-radius: 50%;
+        height:50px;
+        width:50px;
+        object-fit: cover;
+    }
+    .profilepage-section{
+        background-color: rgb(253, 253, 253);
+        padding:40px;
+        
+        
+    }
+    .profile-container{
+        margin-left:15px;
+        border-radius: 5px;
+        padding:30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+    }
+    #user-profile-image{
+        border-radius: 50%;
+        height:120px;
+        width:120px;
+        object-fit: cover;
+    }
+    .profile-content{
+        width:100%;
+        background-color:transparent;
+        margin-left: 5px;
+        overflow-x: hidden;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+    } 
+    .add-post-section{
+       border-radius: 20px;
+        border-style:groove;
+        border-color: black;
+        padding: 10px;
+        padding-top:10px;
+        position: absolute;
+        top:100px;
+        left:0px;
+        
+    }
+    .add-post-container{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding-top: 20px;
+        padding-left:10px;
+    }
+    #content{
+        border-color: black ;
+        color:black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        resize: none;
+    
+    }
+    #sub-btn{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: medium;
+        height: 50px;
+        width:120px;
+        color:white;
+        border:3px solid rgb(1, 4, 18);
+        background-color:rgb(17, 21, 40);
+        margin-left:70px;
+        
+    }
+    .add-comment-section{
+        border-radius: 20px;
+        border-style:groove;
+        border-color: black;
+        padding: 10px;
+        padding-top:10px;
+        position: absolute;
+        top:100px;
+        left:0px;
+         
+    }
+    .add-comment-container{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding-top: 20px;
+        padding-left:10px;
+    }
+    #content{
+        border-color: black ;
+        color:black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        resize: none;
+     
+    }
+    #sub-btn{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: medium;
+        height: 50px;
+        width:120px;
+        color:white;
+        border:3px solid rgb(1, 4, 18);
+        background-color:rgb(17, 21, 40);
+        margin-left:70px;
+         
+    }.user-follower-section{
+        margin-left: 30px;
+        margin-top:20px;
+        display: flex;
+        gap: 20px;
+    
+    }
+    .user-follower-container{
+        background-color: transparent;
+        width:70%;
+        position: absolute;
+        
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    }
+    #follow-user-pic{
+        border-radius: 50%;
+        height:70px;
+        width:70px;
+        object-fit: cover;
+        margin-top:8px;
+    }
+    
+    .form-section{
+        border-radius: 10px;
+        position:absolute;
+        left:70px;
+        top:200px;
+        box-shadow:3px 5px 3px #9a1414;
+
+    }
+    .form-container{
+        background-color: rgb(62, 12, 12);
+        height:200px;
+        width:400px;
+        border-radius: 10px;
+    }
+    .form{
+        margin-left:10px;
+    }
+    
+    .register-form-section{
+        border-radius: 10px;
+        position:absolute;
+        left:30px;
+        top:200px;
+        box-shadow:3px 5px 3px #9a1414;
+
+    }
+    .register-form-container{
+        background-color: rgb(47, 31, 31);
+        height:310px;
+        width:400px;
+        border-radius: 10px;
+    }
+    .form{
+        margin-left:10px;
+    }
+    .login-link{
+        height: 5px;
+        margin-top:-10px;
+        color:bisque;
+    } 
+    
+    .login-link{
+       height: 5px;
+       margin-top:-19px;
+       color:bisque;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       font-style: italic;
+       font-weight: 300;
+    } 
+    #lo-link{
+       color:rgb(106, 160, 206);
+    }
+     
+    
+
+       
+    
+
+  }
+
+
+  @media screen and (min-width: 480px) and (max-width: 900px) {
+    body {
+      background-color: rgb(255, 255, 255);
+      max-width: fit-content;
+    }
+    .main-container{
+        background-color: rgb(255, 255, 255);
+        margin-left:0px;
+        margin-right: 0px;
+        box-sizing: border-box;
+    
+    }
+    .main-content{
+        padding-left:20px;
+        padding-top:30px;
+        font-size: larger;
+        font-family: 'Segoe UI', Arial;
+        box-sizing: border-box;
+    }
+    
+    .post-detail-section{
+        margin-left: 30px;
+        margin-top: 60px;
+        margin-right: 0px;
+        width:100%;
+    }   
+    
+    .form-section{
+        border-radius: 10px;
+        position:absolute;
+        left:40px;
+        top:200px;
+        box-shadow:3px 5px 3px #9a1414;
+
+    
+    }
+    .form-container{
+        background-color: rgb(62, 12, 12);
+        height:200px;
+        width:400px;
+        border-radius: 10px;
+    }
+    .form{
+        margin-left:10px;
+    }
+    .register-form-section{
+        border-radius: 10px;
+        position:absolute;
+        left:40px;
+        top:200px;
+        box-shadow:3px 5px 3px #9a1414;
+
+    }
+    .register-form-container{
+        background-color: rgb(47, 31, 31);
+        height:310px;
+        width:400px;
+        border-radius: 10px;
+    }
+    .form{
+        margin-left:10px;
+    }
+}    

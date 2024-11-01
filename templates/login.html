@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <div class="form-section">
+        
+        <div class="form-container">
+            
+            <div class="form">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                
+                <input type="text" name="username" id="login-username" required placeholder="username"><br><br>
+
+                <input type="password" name="password" id="login-password" required placeholder="password"><br><br>
+                <button type="submit" id="login-btn">Login</button> 
+
+
+            </form>
+        </div>
+        </div>
+        {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+               <h4{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h4>
+               {% endfor %}
+                </ul>
+                 {% endif %} 
+    </div>
+    <script>
+        // Replace the current entry in the history stack
+        window.history.replaceState(null, null, window.location.href);
+    </script>
+</body>
+</html>

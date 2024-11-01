@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Update post</h1>
+    <form action="{% url 'update_post' data.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="4" cols="50" placeholder="Write something...">{{data.content}}</textarea><br><br>
+
+        <label for="image">Post Image:</label>
+        <input type="file" id="image" name="image"><br><br>
+
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>

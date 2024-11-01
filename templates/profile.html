@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="profilepage-section">
+        <div class="profile-container">
+            {%if user_profile.user.profile.user_image%}
+            <img id="user-profile-image" src="{{user_profile.user.profile.user_image.url }}" height="100" alt="">
+            {%else%}
+            <img src="{% static 'images/oip.jpg' %}" height="100" alt="">
+            {%endif%}
+            <h3 id="username-text">{{user_profile.user}}</h3>
+            <p>{{user_profile.user.profile.bio}}</p>
+            Joined on:{{user_profile.user.profile.created_at}}<br>
+            {% if user.is_authenticated %}
+            <div class="follow-tag">
+            <a href="{% url 'following' user_profile.user.id %}" id="anchor-tag"><p>{{ user_profile.following_count }} Following</p>
+            </a>
+            <a href="{% url 'followers' user_profile.user.id %}" id="anchor-tag"><p>{{ user_profile.followers_count }} Followers</p></a>
+            
+            </div>
+            {%endif%}
+            {% comment %} {% if request.user != user_profile.user %}
+            {% if is_following %}
+            <a href="{% url 'profile_follow' user_profile.user.id %}"id="anchor-tag">Following</a>
+            {% else %}
+            <a href="{% url 'profile_follow' user_profile.user.id %}" id="anchor-tag">Follow</a>
+            {% endif %}
+            
+            {%endif%}
+            {% endif %} {% endcomment %}
+            <!-- Include CSRF token -->
+            
+            <input type="hidden" id="csrf-token" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            {% if request.user.is_authenticated%}
+            {% if request.user != user_profile.user %}
+                <a href="{% url 'profile_follow' user_profile.user.id %}" 
+                    id="follow-btn" 
+                    class="btn btn-primary">
+                    {% if is_following %}Following{% else %}Follow{% endif %}
+                </a>
+            {% endif %}
+            {%endif%}
+            
+            {% if request.user.is_authenticated and request.user == user_profile.user %}
+            <a href="{% url 'update_profile' user.id %}">Update Profile</a><br><br>
+            <a href="{% url 'post'%}">Add post</a><br><br>
+            <a href="{% url 'logout'%}">Logout</a>
+
+
+            {%else%}
+
+            {%endif%}
+        
+           
+           
+            
+           
+            
+        </div>
+        <hr>
+        <br>
+        <div class="profile-content">
+            <div class="profile-post">
+                {%for post in posts%}
+                <a href="{% url 'post_details' post.id %}" id="anchor-tag">
+                {{post.content}}<br><br></a>
+                {%if post.image%}
+                <a href="{% url 'post_details' post.id %}" id="anchor-tag">
+                <img src="{{post.image.url}}" height="100" alt=""><br><br></a>
+                {%else%}
+                {%endif%}  
+                {%if user.is_authenticated and request.user == post.user %}
+                <a href="{% url 'deletepost' post.id %}">Delete</a>
+                <a href="{% url 'update_post' post.id%}">Updatepost</a>
+                <br><br>
+                <hr><br>
+                {%else%}
+                
+
+                {%endif%}
+                {%endfor%}
+                
+
+            </div>
+
+        </div>
+        
+    </div>
+   <script src="{% static 'js/follow.js' %}"></scripts>
+</body>
+</html>

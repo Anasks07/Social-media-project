@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="search-content-container">
+        
+    {% for profile in profile_obj %}
+    
+    {% if profile.user.profile.user_image %}
+    <img src="{{ profile.user.profile.user_image.url }}">
+    {%else%}
+    <img id="alt-img" src="{% static 'images/oip.jpg' %}">
+    {% comment %} <img id="alt-img" src="{% static 'images/oip.jpg' %}" ></a> {% endcomment %}
+    {%endif%}
+     <a href="{% url 'profiles' profile.username %}"id="anchor-tag"> {{profile.username}}</a><br><br><br>
+    
+     {%empty%}
+     
+     <p>No matching profiles found</p>
+    
+    {%endfor%}
+   
+     {% if post_obj.exists %}
+        <h3>Posts:</h3>
+        <ul>
+            {% for post in post_obj %}
+                <a href="{% url 'post_details' post.id %}"><li><strong>{{ post.content|truncatewords:20 }}</strong></li></a>
+                <!-- Add more post details as needed -->
+            {% endfor %}
+        </ul>
+   
+    
+        {%else%}
+        <p>No matching posts found.</p>
+        {% endif %}
+   
+        
+        
+        
+        
+   
+    </div>
+</body>
+</html>

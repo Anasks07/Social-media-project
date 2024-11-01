@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Followers</title>
+</head>
+<body>
+    <div class="user-follower-section">
+    {%if followers %}
+    {%for follow in followers%}
+   
+    <div class="user-follower-container">
+    {% if follow.user.profile.user_image %}   
+    <a href="{% url 'profiles' follow.user.username %}" id="anchor-tag"> 
+    <img id="follow-user-pic" src="{{follow.user.profile.user_image.url}}"> 
+    </a>  
+    {%else%}
+    <a href="{% url 'profiles' follow.user.username %}" id="anchor-tag">
+        <img id="alt-img-profile" src="{% static 'images/oip.jpg' %}">
+    </a>
+    {%endif%}
+    <a href="{% url 'profiles' follow.user.username %}" id="anchor-tag"><h1>{{follow.user.username}}</h1></a>
+    {%for follow in profile_followers%}
+    {% if follow.user != request.user %}
+    {% if request.user.profile in follow.user.profile.followers.all %}
+    <a href="{% url 'profile_follow' follow.user.profile.id %}"id="anchor-tag">Following</a>
+    {% else %}
+    <a href="{% url 'profile_follow' follow.user.profile.id %}" id="anchor-tag">Follow</a>
+    {% endif %}
+    {%endif%}
+
+    <br><br>
+    </div>
+    </div>
+    {%endfor%}
+    {%endfor%}
+    {%else%}
+    No followers
+    {%endif%}
+</body>
+</html>

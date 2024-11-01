@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Following</title>
+</head>
+ <body>
+
+    {% comment %} {% if following %}
+    {% for data in following %}
+        <div class="user-following-section">
+            <div class="user-following-container">
+                <!-- Display the user's profile image -->
+                {% if data.user.profile.user_image %}
+                    <a href="{% url 'profiles' data.user.username %}" id="anchor-tag">
+                        <img id="following-user-pic" src="{{ data.user.profile.user_image.url }}" alt="">
+                    </a>
+                {% else %}
+                    <a href="{% url 'profiles' data.user.username %}" id="anchor-tag">
+                        <img id="following-user-pic" src="{% static 'images/oip.jpg' %}" alt="">
+                    </a>
+                {% endif %}
+                
+                <!-- Display the user's username -->
+                <a href="{% url 'profiles' data.user.username %}" id="anchor-tag">
+                    <h3>{{ data.user.username }}</h3>
+                </a>
+                
+                <!-- Display follow/following status -->
+                {% if data.user != request.user %}
+                    {% if data.user.profile in request.user.profile.following.all %}
+                        <a href="{% url 'profile_follow' data.user.profile.id %}" id="anchor-tag">Following</a>
+                    {% else %}
+                        <a href="{% url 'profile_follow' data.user.profile.id %}" id="anchor-tag">Follow</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <h2>No users to display</h2>
+{% endif %} {% endcomment %}
+
+<div class="user-following-section">
+    {% if following %}
+    {%for data in following %}
+        <div class="user-following-container">
+            {%if data.user.profile.user_image%}
+            <a href="{% url 'profiles' data.user.username %}" id="anchor-tag" >
+            <img id="following-user-pic" src="{{data.user.profile.user_image.url}}" alt="">
+            </a>
+            {%else%}
+            <a href="{% url 'profiles' data.user.username %}" id="anchor-tag" >
+            <img id="following-user-pic" src="{% static 'images/oip.jpg'%}" alt=""></a>
+            {%endif%}
+            <a href="{% url 'profiles' data.user.username %}" id="anchor-tag" > <h3>{{data.user.username}}</h3></a>
+            {% for item in following_status %}
+            {% if item.profile.user != request.user %}
+            <p>{{ item.profile.user.username }}</p>
+            {% if item.is_following %}
+            <a href="{% url 'profile_follow' item.profile.id %}" id="anchor-tag">Following</a>
+            {% else %}
+            <a href="{% url 'profile_follow' item.profile.id %}" id="anchor-tag">Follow</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {%endfor%} 
+
+
+            {% comment %} {% if data.user != request.user %}
+            {% if request.user.profile in data.user.profile.following.all %}
+             <a href="{% url 'profile_follow' data.user.profile.id %}"id="anchor-tag">Following</a>
+            {% else %}
+             <a href="{% url 'profile_follow' data.user.profile.id %}" id="anchor-tag">Follow</a>
+            {% endif %}
+            {%endif%}
+            {%endfor%} {% endcomment %}
+           
+
+            {% comment %} {% if data.user in request.user.profile.data.all %}
+            <a href="{% url 'profile_follow' data.user.profile.id %}" id="anchor-tag">Follow</a>
+
+            {% else %}
+            <a href="{% url 'profile_follow' data.user.profile.id %}"id="anchor-tag">Unfollow</a>
+            {% endif %}
+            {%endif%} {% endcomment %}
+          
+            {%else%}
+            
+            <h2>User is not following anyone</h2>
+            {%endif%}
+            
+
+        </div>
+    </div>
+    
+</body>
+</html>

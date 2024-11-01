@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Post details</title>
+</head>
+<body>
+    <div class="post-detail-section">
+        <div class="post-detail-container">
+          
+            <div class="user-info">
+                {% if post.user.profile.user_image %}
+            <a href="{% url 'profiles' post.user.username %}">
+            <img id="post-user-pic" src="{{ post.user.profile.user_image.url }}"  alt="{% static 'images/oip.jpg' %}"></a>
+            {%else%}
+            <a href="{% url 'profiles' post.user.username %}">
+            <img id="alt-img" src="{% static 'images/oip.jpg' %}" ></a>
+            {%endif%}
+            <h3 id="username">{{post.user}}</h3>
+             </div>
+            <p id="created-date">{{post.created_at}}</p>
+            <p id="post-content">{{post.content}}</p>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" width="300" height="170" alt="Image"><br>
+            {%else%}
+            {%endif%}
+            <a href="{% url 'add_comment' post.id %}" id="anchor-tag">💬</a>
+            {% if user.is_authenticated %}
+            <form id="like-form-{{ post.id }}" method="post" style="display: none;">
+                {% csrf_token %}
+            </form>
+            <button class="button" id="like-btn-{{ post.id }}" data-linked ="{% if user in post.likes.all %}true{%else%}false{%endif%}" >
+            {% if user in post.likes.all%}
+            Unlike 🤍
+            {%else%}
+            Like  🤍
+            {%endif%}
+            </button>
+            <p>Total Likes: <span id="like-count-{{post.id}}">{{ post.likes.count }}</span></p>
+            {%endif%}
+            <br><br>
+            <hr>
+            <h2>Comments</h2>
+            <div>
+                {% for comment in comments %}
+                <div class="comment-section">
+                {% if comment.user.profile.user_image %}
+                <a href="{% url 'profiles' comment.user.username %}">
+                <img id="comment-user-pic"  src="{{ comment.user.profile.user_image.url }}"></a>
+                 {% else %}
+                 <a href="{% url 'profiles' comment.user.username %}">
+                 <img id="alt-img" src="{% static 'images/oip.jpg' %}" ></a>
+                 {% endif %}
+                <h3>{{ comment.user }}</h3>
+                </div>
+                    <p id="comment-content"> {{ comment.content }}</p>
+                    {%if user.is_authenticated and request.user == comment.user %}
+                    <a href="{% url 'delete_comment' comment.id %}" id="anchor-tag">delete</a>
+                    {%endif%}
+                    <hr>
+                {% empty %}
+                    <p>No comments yet.</p>
+                {% endfor %}
+                
+            </div>
+            <script src="{% static 'js/script.js' %}" ></script>
+            <script>
+                window.addEventListener('load', function() {
+                    // If the user navigates back to the comment form, redirect them to post details
+                    if (document.referrer.includes('/comment/')) {
+                        window.location.href = window.location.href; // Stay on the current page
+                    }
+                });
+            </script>
+
+           
+        </div>
+    </div>
+   
+    
+</body> 
+</html>

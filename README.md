@@ -1,1 +1,1 @@
-This is a social media project.
+Social media project.
